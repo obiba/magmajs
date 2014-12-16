@@ -1,4 +1,13 @@
-magmajs
-=======
+Javascript impementation of [Magma](https://github.com/obiba/magma).
 
-Javascript implementation of Magma library from OBiBa
+Build:
+
+```
+npm install
+```
+
+Test:
+
+```
+npm test
+```

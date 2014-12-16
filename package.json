@@ -1,0 +1,28 @@
+{
+  "name": "magma",
+  "version": "0.1.0",
+  "description": "Javascript implementation of Magma library from OBiBa",
+  "main": "lib/magma.js",
+  "devDependencies": {
+    "coffee-script": "~1.8.0",
+    "nodeunit": "~0.9.0"
+  },
+  "scripts": {
+    "prepublish": "./node_modules/coffee-script/bin/coffee --output lib/ --compile src/main",
+    "pretest": "./node_modules/coffee-script/bin/coffee --output test/ --compile src/test",
+    "test": "./node_modules/nodeunit/bin/nodeunit test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/obiba/magmajs.git"
+  },
+  "keywords": [
+    "coffeescript"
+  ],
+  "author": "",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/obiba/magmajs/issues"
+  },
+  "homepage": "https://github.com/obiba/magmajs"
+}
