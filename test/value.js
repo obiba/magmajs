@@ -11,9 +11,21 @@
       test.equal(val.value(), "toto");
       return test.done();
     },
+    'test text type 2': function(test) {
+      var val;
+      val = Magma.ValueType.TEXT.valueOf("toto");
+      test.equal(val.value(), "toto");
+      return test.done();
+    },
     'test integer type': function(test) {
       var val;
       val = new Magma.Value(Magma.ValueType.INTEGER, 1);
+      test.equal(val.value(), 1);
+      return test.done();
+    },
+    'test integer type 2': function(test) {
+      var val;
+      val = Magma.ValueType.INTEGER.valueOf(1);
       test.equal(val.value(), 1);
       return test.done();
     },
@@ -102,6 +114,13 @@
       var val;
       val = new Magma.Value(Magma.ValueType.TEXT, void 0);
       test.equal(val.isSequence(), false);
+      return test.done();
+    }
+  };
+
+  exports.IsSingletonTest = {
+    'test text value type is a singleton': function(test) {
+      test.equal(Magma.ValueType.TEXT, Magma.ValueType.TEXT);
       return test.done();
     }
   };

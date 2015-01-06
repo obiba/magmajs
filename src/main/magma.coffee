@@ -1,20 +1,67 @@
 Magma = exports ? this 
 
+class TextType
+  constructor: ->
+    @_name = "text"
+
+  name: ->
+    @_name
+
+  valueOf: (v) ->
+    if (v == null || v == undefined)
+      new Magma.Value(@_name, null)
+    else
+      new Magma.Value(@_name, v + "")
+
+
+class IntegerType
+  constructor: ->
+    @_name = "integer"
+
+  name: ->
+    @_name
+
+  valueOf: (v) ->
+    if (v == null || v == undefined)
+      new Magma.Value(@_name, null)
+    else
+      new Magma.Value(@_name, v)
+
+
+class DecimalType
+  constructor: ->
+    @_name = "decimal"
+
+  name: ->
+    @_name
+
+  valueOf: (v) ->
+    if (v == null || v == undefined)
+      new Magma.Value(@_name, null)
+    else
+      new Magma.Value(@_name, v)
+
+
+class BooleanType
+  constructor: ->
+    @_name = "boolean"
+
+  name: ->
+    @_name
+
+  valueOf: (v) ->
+    if (v == null || v == undefined)
+      new Magma.Value(@_name, null)
+    else
+      new Magma.Value(@_name, v ? true : false)
+
+
 Magma.ValueType = 
-	TEXT: 
-		name: "text"
-		valueOf: (v) ->
-			if (v == null || v == undefined)
-				new Value("text", null)
-			else
-				new Value("text", v + "")
-	INTEGER: 
-		name: "integer"
-	DECIMAL: 
-		name: "decimal"
-	BOOLEAN: 
-		name: "boolean"
-	DATETIME: 
+	TEXT: new TextType()
+	INTEGER: new IntegerType()
+	DECIMAL: new DecimalType()
+	BOOLEAN: new BooleanType()
+	DATETIME:
 		name: "datetime"
 	DATE: 
 		name: "date"
